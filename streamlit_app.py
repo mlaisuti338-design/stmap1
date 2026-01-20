@@ -57,10 +57,13 @@ col1, col2 = st.columns([1, 2])
 
 with col1:
     st.subheader("取得したデータ")
-    st.data_editor(df[['City', 'Temperature']], use_container_width=True)
+    edited = st.data_editor(df[['City', 'Temperature']], use_container_width=True)
+    df['Temperature'] = edited['Temperature']
+    df['elevation'] = df['Temprature'] * 3000
+
     
     if st.button('データを更新'):
-        st.cache_data.clear()
+        #st.cache_data.clear()
         st.rerun()
 
 with col2:

@@ -59,7 +59,7 @@ with col1:
     st.subheader("取得したデータ")
     edited = st.data_editor(df[['City', 'Temperature']], use_container_width=True)
     df['Temperature'] = edited['Temperature']
-    df['elevation'] = df['Temprature'] * 3000
+    df['elevation'] = df['Temperature'] * 3000
 
     
     if st.button('データを更新'):

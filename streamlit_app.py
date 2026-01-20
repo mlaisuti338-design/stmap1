@@ -57,7 +57,7 @@ col1, col2 = st.columns([1, 2])
 
 with col1:
     st.subheader("取得したデータ")
-    st.dataframe(df[['City', 'Temperature']], use_container_width=True)
+    st.data_editor(df[['City', 'Temperature']], use_container_width=True)
     
     if st.button('データを更新'):
         st.cache_data.clear()
